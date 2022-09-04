@@ -1,4 +1,8 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ViewChild
+} from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { PageEvent } from '@angular/material/paginator';
 import { Observable } from 'rxjs';
