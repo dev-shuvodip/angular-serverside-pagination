@@ -6,7 +6,11 @@ import {
 import { MatPaginator } from '@angular/material/paginator';
 import { PageEvent } from '@angular/material/paginator';
 import { Observable } from 'rxjs';
-import { map, startWith, switchMap } from 'rxjs/operators';
+import {
+  map,
+  startWith,
+  switchMap
+} from 'rxjs/operators';
 
 import { ApiPaginationService } from './api-pagination.service';
 import { User, UserData } from './user.model';
@@ -51,6 +55,6 @@ export class AppComponent implements AfterViewInit {
         this.limit = data.limit
         return data.data;
       })
-    ).subscribe(data => (this.dataSource = data));
+    ).subscribe((data: User[]) => (this.dataSource = data));
   }
 }
