@@ -29,7 +29,7 @@ export class AppComponent implements AfterViewInit {
   page!: number;
   limit!: number;
 
-  pageSizeOptions: number[] = [5, 10, 20];
+  pageSizeOptions: number[] = [5, 10];
   pageEvent!: PageEvent;
   displayedColumns: string[] = ['id', 'title', 'firstName', 'lastName'];
   dataSource: User[] = []
