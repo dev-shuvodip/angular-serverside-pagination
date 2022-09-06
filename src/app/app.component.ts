@@ -31,6 +31,7 @@ export class AppComponent implements AfterViewInit {
 
   pageSizeOptions: number[] = [5, 10];
   pageEvent!: PageEvent;
+  isLoadingResults = true;
   displayedColumns: string[] = ['id', 'title', 'firstName', 'lastName'];
   dataSource: User[] = []
 
@@ -42,11 +43,13 @@ export class AppComponent implements AfterViewInit {
     this.paginator.page.pipe(
       startWith({}),
       switchMap(() => {
+        this.isLoadingResults = true;
         return this.apiPaginationService.getUserData(
           this.paginator.pageIndex, this.paginator.pageSize
         );
       }),
       map(data => {
+        this.isLoadingResults = false;
         if (data === null) {
           return [];
         }
