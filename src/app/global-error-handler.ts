@@ -6,18 +6,14 @@ import { User } from './user.model';
 @Injectable()
 
 export class GlobalErrorHandler implements ErrorHandler {
-
     handleError(err: HttpErrorResponse): Observable<User> {
         let errorMessage = '';
         if (err.error instanceof ErrorEvent) {
-
             errorMessage = `An error occurred: ${err.error.message}`;
         } else {
-
             errorMessage = `Server returned code: ${err.status}, error message is: ${err.message}`;
         }
 
         return throwError(() => new Error(err.error));
     }
-
 }

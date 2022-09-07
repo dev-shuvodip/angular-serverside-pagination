@@ -9,7 +9,6 @@ import { UserData } from './user.model';
   providedIn: 'root'
 })
 export class ApiPaginationService {
-
   constructor(private httpClient: HttpClient) { }
 
   getUserData(page: number, limit: number): Observable<UserData> {
@@ -23,5 +22,4 @@ export class ApiPaginationService {
 
     return this.httpClient.get<UserData>(`${environment.apiUrl}?page=${page}&limit=${limit}`, options)
   }
-
 }
