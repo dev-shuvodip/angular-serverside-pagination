@@ -55,7 +55,7 @@ export class AppComponent implements AfterViewInit {
         }
 
         this.total = data.total;
-        this.limit = data.limit
+        this.limit = data.limit;
         return data.data;
       })
     ).subscribe((data: User[]) => (this.dataSource = data));
