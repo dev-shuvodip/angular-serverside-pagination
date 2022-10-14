@@ -28,9 +28,11 @@ export class AppComponent implements AfterViewInit {
   total!: number;
   page!: number;
   limit!: number;
+  dataSource: User[] = [];
 
   pageSizeOptions: number[] = [10, 20, 25];
   pageEvent!: PageEvent;
+  @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   isLoadingResults = true;
 
   columns = [{
@@ -51,10 +53,7 @@ export class AppComponent implements AfterViewInit {
     cell: (element: User) => `${element.lastName}`
   }];
 
-  dataSource: User[] = [];
   displayedColumns = this.columns.map(c => c.columnDef);
-
-  @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
 
   constructor(private apiPaginationService: ApiPaginationService) { }
 
