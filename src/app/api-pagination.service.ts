@@ -10,6 +10,7 @@ import { appConfig } from '../assets/app.conf'
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApiPaginationService {
   constructor(private httpClient: HttpClient) { }
 
