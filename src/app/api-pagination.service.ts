@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+
 import { environment } from 'src/environments/environment';
 import { UserData } from './user.model';
 import { appProperties } from '../assets/app.properties'
