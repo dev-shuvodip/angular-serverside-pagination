@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
 import { UserData } from './user.model';
-import { appProperties } from '../assets/app.properties'
+import { appConfig } from '../assets/app.conf'
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class ApiPaginationService {
 
   getUserData(page: number, limit: number): Observable<UserData> {
     const headers: HttpHeaders = new HttpHeaders({
-      'app-id': `${appProperties.appId}`
+      'app-id': `${appConfig.appId}`
     })
 
     const options = {
