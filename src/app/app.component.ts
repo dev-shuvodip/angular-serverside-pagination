@@ -32,8 +32,27 @@ export class AppComponent implements AfterViewInit {
   pageSizeOptions: number[] = [10, 20, 25];
   pageEvent!: PageEvent;
   isLoadingResults = true;
-  displayedColumns: string[] = ['id', 'title', 'firstName', 'lastName'];
-  dataSource: User[] = []
+
+  columns = [{
+    columnDef: 'id',
+    header: 'Id',
+    cell: (element: User) => `${element.id}`
+  }, {
+    columnDef: 'title',
+    header: 'Title',
+    cell: (element: User) => `${element.title}`
+  }, {
+    columnDef: 'firstName',
+    header: 'First Name',
+    cell: (element: User) => `${element.firstName}`
+  }, {
+    columnDef: 'lastName',
+    header: 'Last Name',
+    cell: (element: User) => `${element.lastName}`
+  }];
+
+  dataSource: User[] = [];
+  displayedColumns = this.columns.map(c => c.columnDef);
 
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
 
