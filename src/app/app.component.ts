@@ -35,23 +35,28 @@ export class AppComponent implements AfterViewInit {
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   isLoadingResults = true;
 
-  columns = [{
-    columnDef: 'id',
-    header: 'Id',
-    cell: (element: User) => `${element.id}`
-  }, {
-    columnDef: 'title',
-    header: 'Title',
-    cell: (element: User) => `${element.title}`
-  }, {
-    columnDef: 'firstName',
-    header: 'First Name',
-    cell: (element: User) => `${element.firstName}`
-  }, {
-    columnDef: 'lastName',
-    header: 'Last Name',
-    cell: (element: User) => `${element.lastName}`
-  }];
+  columns = [
+    {
+      columnDef: 'id',
+      header: 'Id',
+      cell: (element: User) => `${element.id}`
+    },
+    {
+      columnDef: 'title',
+      header: 'Title',
+      cell: (element: User) => `${element.title}`
+    },
+    {
+      columnDef: 'firstName',
+      header: 'First Name',
+      cell: (element: User) => `${element.firstName}`
+    },
+    {
+      columnDef: 'lastName',
+      header: 'Last Name',
+      cell: (element: User) => `${element.lastName}`
+    }
+  ];
 
   displayedColumns = this.columns.map(c => c.columnDef);
 
