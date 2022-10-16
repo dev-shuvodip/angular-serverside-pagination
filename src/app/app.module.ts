@@ -7,10 +7,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
 import { GlobalErrorHandler } from './global-error-handler';
+import { UserDataDirective } from './user-data.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserDataDirective
   ],
   imports: [
     BrowserModule,
