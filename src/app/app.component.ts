@@ -71,6 +71,7 @@ export class AppComponent implements AfterViewInit {
       }),
       map(data => {
         this.isLoadingResults = false;
+        
         if (data === null) {
           return [];
         }
