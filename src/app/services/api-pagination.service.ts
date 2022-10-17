@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
 import { UserData } from '../models/user.model';
-import { appConfig } from '../../assets/app.conf'
+import { appConfig } from '../../environments/appConfig'
 
 @Injectable({
   providedIn: 'root'
