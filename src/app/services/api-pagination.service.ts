@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
-import { UserData } from './user.model';
-import { appConfig } from '../assets/app.conf'
+import { UserData } from '../models/user.model';
+import { appConfig } from '../../assets/app.conf'
 
 @Injectable({
   providedIn: 'root'

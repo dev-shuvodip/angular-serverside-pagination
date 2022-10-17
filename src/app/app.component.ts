@@ -12,8 +12,8 @@ import {
   switchMap
 } from 'rxjs/operators';
 
-import { ApiPaginationService } from './api-pagination.service';
-import { User, UserData } from './user.model';
+import { ApiPaginationService } from './services/api-pagination.service';
+import { User, UserData } from './models/user.model';
 
 @Component({
   selector: 'app-root',

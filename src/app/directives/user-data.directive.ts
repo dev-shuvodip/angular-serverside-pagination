@@ -5,7 +5,7 @@ import {
   Renderer2,
   ViewChild
 } from '@angular/core';
-import { User } from './user.model';
+import { User } from '../models/user.model';
 
 @Directive({
   selector: '[appUserData]',
