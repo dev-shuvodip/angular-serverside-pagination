@@ -23,17 +23,17 @@ import { User, UserData } from './models/user.model';
 
 export class AppComponent implements AfterViewInit {
   errorMessage!: string;
-  userData = new Observable<UserData>();
-  users: User[] = [];
-  total!: number;
+  isLoadingResults = true;
+
   page!: number;
   limit!: number;
+  total!: number;
   dataSource: User[] = [];
-
-  pageSizeOptions: number[] = [10, 20, 25];
+  userData = new Observable<UserData>();
   pageEvent!: PageEvent;
+  pageSizeOptions: number[] = [10, 20, 25];
+
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
-  isLoadingResults = true;
 
   columns = [
     {
@@ -58,7 +58,7 @@ export class AppComponent implements AfterViewInit {
     }
   ];
 
-  displayedColumns = this.columns.map(c => c.columnDef);
+  displayedColumns = [...this.columns.map(c => c.columnDef)];
 
   constructor(private apiPaginationService: ApiPaginationService) { }
 
@@ -67,9 +67,7 @@ export class AppComponent implements AfterViewInit {
       startWith({}),
       switchMap(() => {
         this.isLoadingResults = true;
-        return this.apiPaginationService.getUserData(
-          this.paginator.pageIndex, this.paginator.pageSize
-        );
+        return this.apiPaginationService.getUserData(this.paginator.pageIndex, this.paginator.pageSize);
       }),
       map(data => {
         this.isLoadingResults = false;
