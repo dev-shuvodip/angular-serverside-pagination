@@ -1,9 +1,6 @@
 import {
   Directive,
-  ElementRef,
-  HostListener,
-  Renderer2,
-  ViewChild
+  HostListener
 } from '@angular/core';
 import { User } from '../models/user.model';
 
