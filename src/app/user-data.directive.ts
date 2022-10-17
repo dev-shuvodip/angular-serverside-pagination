@@ -17,7 +17,7 @@ export class UserDataDirective {
   constructor() { }
 
   @HostListener('mouseenter') mouseEnter(event: MouseEvent) {
-    console.log('{ \n\tEvent: ', '\'mouseenter\'', ', \n\tUser data: ', this.appUserData, '\n}');
+    console.log('{ \n\tEvent: ', '\'mouseenter\',', '\n\tUser data: ', this.appUserData, '\n}');
   }
   @HostListener('mouseleave') mouseLeave(event: MouseEvent) {
     console.log('Event: ', '\'mouseleave\'');
