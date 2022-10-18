@@ -5,18 +5,18 @@ import {
 import { User } from '../models/user.model';
 
 @Directive({
-  selector: '[appUserData]',
-  inputs: ['appUserData']
+  selector: '[userData]',
+  inputs: ['userData']
 })
 export class UserDataDirective {
-  appUserData!: User;
+  userData!: User;
 
   constructor() { }
 
-  @HostListener('mouseenter') mouseEnter(event: MouseEvent) {
-    console.log('{ \n\tEvent: ', '\'mouseenter\',', '\n\tUser data: ', this.appUserData, '\n}');
+  @HostListener('mouseenter', ['$event']) mouseEnter(event: Event) {
+    console.log('{ \n\tEvent: ', `'${event.type}',`, '\n\tUser data: ', this.userData, '\n}');
   }
-  @HostListener('mouseleave') mouseLeave(event: MouseEvent) {
-    console.log('Event: ', '\'mouseleave\'');
+  @HostListener('mouseleave', ['$event']) mouseLeave(event: Event) {
+    console.log('Event: ', `'${event.type}'`);
   }
 }
