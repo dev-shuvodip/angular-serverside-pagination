@@ -1,7 +1,6 @@
 import {
   AfterViewInit,
   Component,
-  ElementRef,
   ViewChild
 } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
