@@ -20,6 +20,7 @@
         mat-row
         *matRowDef="let row; columns: displayedColumns"
         [userData]="row"
+        (datareceive)="logData($event)"
       ></tr>
     </table>
   </div>

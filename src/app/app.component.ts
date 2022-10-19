@@ -1,6 +1,7 @@
 import {
   AfterViewInit,
   Component,
+  ElementRef,
   ViewChild
 } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
@@ -14,6 +15,7 @@ import {
 
 import { ApiPaginationService } from './services/api-pagination.service';
 import { User, UserData } from './models/user.model';
+import { NgbPopover } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -71,7 +73,7 @@ export class AppComponent implements AfterViewInit {
       }),
       map(data => {
         this.isLoadingResults = false;
-        
+
         if (data === null) {
           return [];
         }
@@ -81,5 +83,9 @@ export class AppComponent implements AfterViewInit {
         return data.data;
       })
     ).subscribe((data: User[]) => (this.dataSource = data));
+  }
+
+  logData(data: User) {
+    console.log(data);
   }
 }
