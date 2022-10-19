@@ -15,7 +15,6 @@ import {
 
 import { ApiPaginationService } from './services/api-pagination.service';
 import { User, UserData } from './models/user.model';
-import { NgbPopover } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
