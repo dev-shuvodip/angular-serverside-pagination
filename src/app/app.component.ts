@@ -13,7 +13,10 @@ import {
 } from 'rxjs/operators';
 
 import { ApiPaginationService } from './services/api-pagination.service';
-import { User, UserData } from './models/user.model';
+import {
+  User,
+  UserData
+} from './models/user.model';
 
 @Component({
   selector: 'app-root',
