@@ -10,6 +10,7 @@ import { User } from '../models/user.model';
   selector: '[userData]',
   inputs: ['userData']
 })
+
 export class UserDataDirective {
   userData!: User;
   @Output('datareceive') userDataReceived = new EventEmitter<User>();
